@@ -5,13 +5,13 @@ function sendMessage() {
 
     let chatBox = document.getElementById("chat-box");
 
-    // Exibir a mensagem do usuário
+    // EXIBIR MENSAGEM DO USUÁRIO
     let userMessage = document.createElement("div");
     userMessage.classList.add("message", "user");
     userMessage.textContent = userText;
     chatBox.appendChild(userMessage);
 
-    // Respostas pré-definidas da assistente
+    // RESPOSTAS PADRÃO DA ASSISTENTE
     let response = getResponse(userText);
 
     setTimeout(() => {
@@ -23,7 +23,7 @@ function sendMessage() {
         chatBox.scrollTop = chatBox.scrollHeight; // Rolar para a última mensagem
     }, 500);
 
-    inputField.value = ""; // Limpar o campo de entrada
+    inputField.value = ""; // LIMPA CAMPO DE ENTRADA
 }
 
 function getResponse(text) {
@@ -38,7 +38,7 @@ function getResponse(text) {
     return responses[text.toLowerCase()] || "Desculpe, ainda não sei responder isso.";
 }
 
-// Permitir envio ao pressionar Enter
+// PERMITIR ENVIO AO PRESSIONAR ENTER
 function handleKeyPress(event) {
     if (event.key === "Enter") {
         sendMessage();
